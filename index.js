@@ -36,3 +36,13 @@ app.use((req, res, next) => {
     next()
 })
 
+// Response sukses
+function successResponse(res, message, data, status = 200) {
+    return res.status(status).json({
+        status: 'success',
+        message,
+        data,
+        error: null,
+    })
+}
+
